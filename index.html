@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>navbar</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    nav {
+      background-color: red;
+    }
+
+    ul {
+      background-color: red;
+      display: inline-flex;
+    }
+
+    .special {
+      position: relative;
+    }
+
+    .navbar ul li {
+      list-style: none;
+      margin: 14px 0px;
+      padding: 9px 17px;
+      /* background-color: blue; */
+      margin-left: 9vw;
+      /* background-color: blue; */
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-family: Ubuntu, sans-serif;
+    }
+
+    .active,
+    .navbar ul li:hover {
+      background-color: #db1e1e6e;
+      border-radius: 3px;
+    }
+
+    .drop {
+      position: relative;
+    }
+
+    .drop_box {
+      display: none;
+      position: absolute;
+      /* top:30px; */
+      max-width: 16vw;
+      left: 8vw;
+      background-color: #ff0000a2;
+      /* border:1px solid rgba(0, 0, 0, 0.473);s */
+      border-radius: 3px;
+      box-shadow: 0px 1px 1px 2px rgba(0, 0, 0, 255);
+    }
+
+    .navbar .drop_box li {
+      /* background-color:hotpink; */
+      color: aqua;
+      font-weight: bold;
+      /* margin: 0px 10px;
+      padding: 2px; */
+      margin: 6px 6px;
+    }
+
+    .drop hr {
+      margin: 0px 10px;
+      /* padding is given from inside but margin is given outside */
+    }
+
+    .drop:hover .drop_box {
+      display: block;
+    }
+
+    /* For hamburger */
+    #icon {
+      display: none;
+    }
+
+    /* Media query */
+    @media (max-width:500px) {
+      .navbar ul li {
+        list-style: none;
+        margin: 8px 0px;
+        margin-left: 0px;
+        padding: 6px 11px;
+        margin-left: 8vw;
+      }
+
+      .drop_box {
+        max-width: 20vw;
+      }
+
+      .navbar .drop_box li {
+        padding: 2px;
+        margin: 0px;
+      }
+    }
+
+    @media (max-width:400px) {
+      ul {
+        display: none;
+        height: 17vh;
+      }
+
+      .navbar ul li {
+        list-style: none;
+      }
+
+      .navbar li:hover {
+        background-color: red;
+      }
+
+
+
+      .navbar ul li {
+        list-style: none;
+        text-align: center;
+        margin: 0px;
+        padding: 8px;
+        margin: 0px 30%;
+      }
+
+      .active {
+        background-color: red;
+      }
+
+      .drop_box {
+        top: 10px;
+        max-width: 46vw;
+        left: 66vw;
+        background-color: #0c8888;
+        border-radius: 7px;
+        box-shadow: 0px 0px 0px 0px;
+      }
+
+      #icon {
+        display: block;
+      }
+
+      #icon p {
+        text-align: end;
+        padding: 8px 30px;
+      }
+
+      #icon i {
+        color: white;
+        font-size: 25px;
+        cursor: pointer;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div id="icon">
+
+      <p><i onclick="myFunction()" class="fa-solid fa-bars"></i></p>
+    </div>
+    <ul id="sea">
+      <li class="active"><a href="#">Home</a></li>
+      <div class="drop">
+        <li class="special"><a href="#">About</a></li>
+        <div class="drop_box">
+          <li><a href="#">History</a></li>
+          <hr>
+          <li><a href="#">Devlopers</a></li>
+        </div>
+      </div>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
+  <script>
+    function myFunction() {
+      
+      var a = document.getElementById("sea");
+      if (a.style.display = "none"){
+        console.log("1");
+        // a.style.display = "block";
+        document.getElementById("sea").setAttribute("style","display:block");
+       } 
+       
+     else if(a.style.display="block"){
+      console.log("2");
+      a.style.display = "none";
+       }
+
+      }
+  </script>
+</body>
+
+</html>
